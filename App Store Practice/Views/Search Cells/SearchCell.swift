@@ -12,7 +12,10 @@ class SearchCell: UICollectionViewCell {
 
     @IBOutlet var appIconImageView: UIImageView!
     @IBOutlet var getButton: UIButton!
+    @IBOutlet var appTitleLabel: UILabel!
     
+    @IBOutlet var appRatingsLabel: UILabel!
+    @IBOutlet var appCategoryLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

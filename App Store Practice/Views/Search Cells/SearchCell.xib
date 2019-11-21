@@ -109,7 +109,10 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="345" height="346"/>
             <connections>
+                <outlet property="appCategoryLabel" destination="elW-hz-nEt" id="R5B-Ka-Tbp"/>
                 <outlet property="appIconImageView" destination="q9M-ix-goj" id="Mhk-NB-Po9"/>
+                <outlet property="appRatingsLabel" destination="oFR-Ic-hhK" id="YE5-gk-GaK"/>
+                <outlet property="appTitleLabel" destination="ylJ-M1-Fcs" id="qRe-mj-z8A"/>
                 <outlet property="getButton" destination="xbL-yj-dlv" id="NdX-Od-nZ1"/>
             </connections>
             <point key="canvasLocation" x="351.44927536231887" y="251.78571428571428"/>

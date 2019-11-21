@@ -9,7 +9,10 @@
 import UIKit
 
 class SearchViewController: UIViewController {
-
+    
+    
+    var appResults = [Result]()
+    
     @IBOutlet var collectionView: UICollectionView!
     
     override func viewDidLoad() {
@@ -19,23 +22,51 @@ class SearchViewController: UIViewController {
         
         collectionView.dataSource = self
         collectionView.delegate = self
-        // Do any additional setup after loading the view.
+        
+        
+        fetchItunesApps()
+        
     }
-
-
+    
+    
+    func fetchItunesApps() {
+        
+        Service.shared.fetchApps { (results) in
+            
+            self.appResults = results
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+                
+            }
+            
+        }
+        
+        
+    }
+    
+    
 }
+
+
+
 
 //MARK: - CollectionView
 
 extension SearchViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return appResults.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
-
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! SearchCell
+        
+        let app = appResults[indexPath.item]
+        cell.appTitleLabel.text = app.trackName
+        cell.appCategoryLabel.text = app.primaryGenreName
+        cell.appRatingsLabel.text = "Rating: \(app.averageUserRating ?? 0)"
+        
         return cell
     }
     
