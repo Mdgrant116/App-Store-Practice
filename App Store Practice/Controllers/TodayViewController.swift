@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  TodayViewController.swift
 //  App Store Practice
 //
 //  Created by Michael Grant on 11/20/19.
@@ -8,13 +8,15 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class TodayViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
+        title = "Today"
+       
     }
+    
 
 
 }
-

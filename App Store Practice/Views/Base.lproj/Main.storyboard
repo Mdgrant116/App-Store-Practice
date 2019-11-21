@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0xP-AI-wlf">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Search-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="SearchVC" id="BYZ-38-t0r" customClass="SearchViewController" customModule="App_Store_Practice" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9tl-9O-FtS">
+                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="4kY-ki-nIV">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="9tl-9O-FtS" secondAttribute="trailing" id="9D9-E2-V9l"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9tl-9O-FtS" secondAttribute="bottom" id="9xE-WQ-PF1"/>
+                            <constraint firstItem="9tl-9O-FtS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="VpF-m3-PzX"/>
+                            <constraint firstItem="9tl-9O-FtS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="kiU-jp-wtc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Search" id="uYS-gS-SEh"/>
+                    <connections>
+                        <outlet property="collectionView" destination="9tl-9O-FtS" id="ali-VF-V2N"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5598.5507246376819" y="137.94642857142856"/>
+        </scene>
+        <!--Today-->
+        <scene sceneID="taX-da-PZl">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Today" id="vjk-Qy-IzC" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="E8r-3L-hkm"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CkU-sM-A1z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2893" y="778"/>
+        </scene>
+        <!--Apps-->
+        <scene sceneID="ICo-Br-dft">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Apps" id="OcN-zH-ayL" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Onf-pV-510"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="twd-z5-7Fi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1999" y="778"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="MwO-c3-Unw">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="0xP-AI-wlf" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MWe-5n-NsE">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="hjI-oy-NQc" kind="relationship" relationship="viewControllers" id="D9t-t1-SyQ"/>
+                        <segue destination="NzI-dI-eno" kind="relationship" relationship="viewControllers" id="njN-6O-U3q"/>
+                        <segue destination="fQA-pD-Ogd" kind="relationship" relationship="viewControllers" id="lls-np-Uyb"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S5y-FB-fbU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3778.2608695652175" y="137.94642857142856"/>
+        </scene>
+        <!--Search-->
+        <scene sceneID="a7o-SF-ark">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hjI-oy-NQc" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Search" image="search" selectedImage="search" id="TVc-fm-16n"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="bkT-Ve-eT2">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="m5A-XH-whZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kW7-qC-IhY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4688.4057971014499" y="137.94642857142856"/>
+        </scene>
+        <!--Apps-->
+        <scene sceneID="2nS-Ok-5j8">
+            <objects>
+                <navigationController storyboardIdentifier="AppsNav" automaticallyAdjustsScrollViewInsets="NO" id="fQA-pD-Ogd" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Apps" image="apps" selectedImage="apps" id="cfJ-h8-5iw"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="o5Y-zb-jng">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="OcN-zH-ayL" kind="relationship" relationship="rootViewController" id="gjH-OA-FiJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DOU-Xt-rqn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1999" y="138"/>
+        </scene>
+        <!--Today-->
+        <scene sceneID="ZwL-Od-u4r">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NzI-dI-eno" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Today" image="today_icon" selectedImage="today_icon" id="Ahg-3l-cuZ"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="jLA-f8-gmD">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vjk-Qy-IzC" kind="relationship" relationship="rootViewController" id="UoD-0S-xuq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kqp-eV-tln" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2893" y="138"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="apps" width="21.666666030883789" height="21.666666030883789"/>
+        <image name="search" width="23.5" height="23.5"/>
+        <image name="today_icon" width="18" height="22.666666030883789"/>
+    </resources>
+</document>
