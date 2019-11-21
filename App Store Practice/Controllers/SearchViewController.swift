@@ -7,31 +7,48 @@
 //
 
 import UIKit
+import SDWebImage
+
 
 class SearchViewController: UIViewController {
     
+    //MARK: - Properties
     
+    var timer: Timer?
     var appResults = [Result]()
+    let searchController = UISearchController()
     
     @IBOutlet var collectionView: UICollectionView!
+    @IBOutlet var searchMessageLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        seutpSearchBar()
         collectionView.register(UINib(nibName: "SearchCell", bundle: nil), forCellWithReuseIdentifier: "Cell")
         
         collectionView.dataSource = self
         collectionView.delegate = self
         
-        
-        fetchItunesApps()
-        
     }
     
     
+    
+    //MARK: - Functions
+    
+    func seutpSearchBar() {
+        
+        definesPresentationContext = true
+        navigationItem.searchController = self.searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.delegate = self
+        
+    }
+    
     func fetchItunesApps() {
         
-        Service.shared.fetchApps { (results) in
+        Service.shared.fetchApps(searchTerm: "Instagram") { (results) in
             
             self.appResults = results
             DispatchQueue.main.async {
@@ -41,9 +58,7 @@ class SearchViewController: UIViewController {
             
         }
         
-        
     }
-    
     
 }
 
@@ -55,6 +70,9 @@ class SearchViewController: UIViewController {
 extension SearchViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        searchMessageLabel.isHidden = appResults.count != 0
+        
         return appResults.count
     }
     
@@ -63,9 +81,7 @@ extension SearchViewController: UICollectionViewDelegateFlowLayout, UICollection
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! SearchCell
         
         let app = appResults[indexPath.item]
-        cell.appTitleLabel.text = app.trackName
-        cell.appCategoryLabel.text = app.primaryGenreName
-        cell.appRatingsLabel.text = "Rating: \(app.averageUserRating ?? 0)"
+        cell.app = app
         
         return cell
     }
@@ -75,5 +91,31 @@ extension SearchViewController: UICollectionViewDelegateFlowLayout, UICollection
         return CGSize(width: view.frame.width, height: 350)
         
     }
+    
+}
+
+extension SearchViewController: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        // introduce some delay before performing the search, otherwise it searches and reloads with every letter you press
+        
+        timer?.invalidate()
+        timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { (_) in
+            Service.shared.fetchApps(searchTerm: searchText) { (res) in
+                
+                self.appResults = res
+                
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                    
+                }
+                
+            }
+            
+        })
+        
+    }
+    
 }
 

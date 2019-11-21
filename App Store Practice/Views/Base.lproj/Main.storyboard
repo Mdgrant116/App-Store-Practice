@@ -26,11 +26,21 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter search term above..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G15-ab-e6e">
+                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="G15-ab-e6e" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6Zm-fS-8Ud"/>
                             <constraint firstAttribute="trailing" secondItem="9tl-9O-FtS" secondAttribute="trailing" id="9D9-E2-V9l"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9tl-9O-FtS" secondAttribute="bottom" id="9xE-WQ-PF1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="G15-ab-e6e" secondAttribute="trailing" id="Fnl-nd-a7b"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="G15-ab-e6e" secondAttribute="bottom" id="POa-gh-Cu1"/>
+                            <constraint firstItem="G15-ab-e6e" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="RGc-Vv-AjO"/>
                             <constraint firstItem="9tl-9O-FtS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="VpF-m3-PzX"/>
                             <constraint firstItem="9tl-9O-FtS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="kiU-jp-wtc"/>
                         </constraints>
@@ -39,6 +49,7 @@
                     <navigationItem key="navigationItem" title="Search" id="uYS-gS-SEh"/>
                     <connections>
                         <outlet property="collectionView" destination="9tl-9O-FtS" id="ali-VF-V2N"/>
+                        <outlet property="searchMessageLabel" destination="G15-ab-e6e" id="cPz-FW-5rp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -71,6 +82,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="0xP-AI-wlf" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MWe-5n-NsE">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>

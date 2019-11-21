@@ -12,9 +12,9 @@ class Service {
     
     static let shared = Service()
     
-    func fetchApps(completion: @escaping ([Result]) ->()) {
+    func fetchApps(searchTerm: String, completion: @escaping ([Result]) ->()) {
         
-        let urlString = "https://itunes.apple.com/search?term=instagram&entity=software"
+        let urlString = "https://itunes.apple.com/search?term=\(searchTerm)&entity=software"
         
         guard let url = URL(string: urlString) else { return }
         
@@ -31,21 +31,19 @@ class Service {
             guard let data = data else { return }
             do {
                 
-                
-                
                 let decodedData = try decoder.decode(SearchResult.self, from: data)
                 
-                
                 completion(decodedData.results)
-                print(decodedData)
+                
             } catch {
+                
                 print("Failed to decode JSON", error)
                 
-                
             }
+            
         }.resume()
+        
     }
-    
     
 }
 
