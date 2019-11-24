@@ -23,6 +23,7 @@ class AppsViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.register(UINib(nibName: "AppSectionCell", bundle: nil), forCellWithReuseIdentifier: "Cell")
         
+        collectionView.register(UINib(nibName: "AppsHeaderCell", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "Header")
     }
     
 }
@@ -50,4 +51,15 @@ extension AppsViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
         
     }
     
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "Header", for: indexPath)
+        
+        return header
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: view.frame.width, height: 300)
+    }
 }

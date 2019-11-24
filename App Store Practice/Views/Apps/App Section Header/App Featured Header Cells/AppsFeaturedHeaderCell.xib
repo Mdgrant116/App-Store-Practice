@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="gTV-IL-0wX" customClass="AppsFeaturedHeaderCell" customModule="App_Store_Practice" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="357" height="289"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="357" height="289"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Fq-5C-WHe">
+                        <rect key="frame" x="0.0" y="0.0" width="357" height="289"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="qHF-wT-jch">
+                                <rect key="frame" x="0.0" y="16" width="357" height="273"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Nexus" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="omE-Rr-nHR">
+                                        <rect key="frame" x="0.0" y="0.0" width="86.5" height="92"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trivia App For Stephen King Fans!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T3E-G7-uth">
+                                        <rect key="frame" x="0.0" y="104" width="346.5" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IPs-gq-oyh">
+                                        <rect key="frame" x="0.0" y="145" width="357" height="128"/>
+                                        <color key="backgroundColor" red="0.34659779070000002" green="0.32526928189999998" blue="0.83875387909999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="IPs-gq-oyh" secondAttribute="trailing" id="Glq-X3-rlo"/>
+                                    <constraint firstItem="IPs-gq-oyh" firstAttribute="leading" secondItem="qHF-wT-jch" secondAttribute="leading" id="PVQ-qa-PaX"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="qHF-wT-jch" firstAttribute="leading" secondItem="1Fq-5C-WHe" secondAttribute="leading" id="5UF-iO-Sv3"/>
+                            <constraint firstAttribute="bottom" secondItem="qHF-wT-jch" secondAttribute="bottom" id="RWO-0W-D7H"/>
+                            <constraint firstAttribute="trailing" secondItem="qHF-wT-jch" secondAttribute="trailing" id="oda-nE-dqg"/>
+                            <constraint firstItem="qHF-wT-jch" firstAttribute="top" secondItem="1Fq-5C-WHe" secondAttribute="top" constant="16" id="xXo-G0-rrf"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="1Fq-5C-WHe" secondAttribute="trailing" id="AT9-kg-hry"/>
+                <constraint firstAttribute="bottom" secondItem="1Fq-5C-WHe" secondAttribute="bottom" id="G45-Tp-cij"/>
+                <constraint firstItem="1Fq-5C-WHe" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="eHW-Wi-nuM"/>
+                <constraint firstItem="1Fq-5C-WHe" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="kgv-Z6-mde"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="357" height="289"/>
+            <connections>
+                <outlet property="companyLabel" destination="omE-Rr-nHR" id="prv-Pb-wL9"/>
+                <outlet property="featuredImageView" destination="IPs-gq-oyh" id="Whq-LG-OtP"/>
+                <outlet property="titleLabel" destination="T3E-G7-uth" id="oho-MW-gie"/>
+            </connections>
+            <point key="canvasLocation" x="360.14492753623193" y="232.70089285714283"/>
+        </collectionViewCell>
+    </objects>
+</document>
