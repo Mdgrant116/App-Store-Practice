@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ygZ-y4-ILG">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Apps View Controller-->
+        <scene sceneID="opr-IC-0f4">
+            <objects>
+                <viewController storyboardIdentifier="AppsVC" id="ygZ-y4-ILG" customClass="AppsViewController" customModule="App_Store_Practice" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="S3N-nc-apo">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Kbx-ju-zyG">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="7ww-Aq-UXk">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Kbx-ju-zyG" firstAttribute="top" secondItem="5s8-Xk-prB" secondAttribute="top" id="49J-Wc-T2c"/>
+                            <constraint firstItem="Kbx-ju-zyG" firstAttribute="leading" secondItem="5s8-Xk-prB" secondAttribute="leading" id="BxO-aw-WLa"/>
+                            <constraint firstItem="5s8-Xk-prB" firstAttribute="bottom" secondItem="Kbx-ju-zyG" secondAttribute="bottom" id="Caz-L4-uH3"/>
+                            <constraint firstItem="5s8-Xk-prB" firstAttribute="trailing" secondItem="Kbx-ju-zyG" secondAttribute="trailing" id="N8x-gJ-Se8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5s8-Xk-prB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="pNj-5N-O2v"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="collectionView" destination="Kbx-ju-zyG" id="pb5-wC-iZW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E2f-jK-s9a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2008.6956521739132" y="156.69642857142856"/>
+        </scene>
+    </scenes>
+</document>
