@@ -28,7 +28,7 @@ class AppSectionCollectionViewDataSource: NSObject, UICollectionViewDataSource, 
         let lineSpacing: CGFloat = 10
         let height = (collectionView.frame.height - 2 * topBottomPadding - 2 * lineSpacing) / 3
 
-        return CGSize(width: collectionView.frame.width, height: height)
+        return CGSize(width: collectionView.frame.width - 48, height: height)
         
     }
 

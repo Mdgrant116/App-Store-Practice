@@ -11,10 +11,19 @@ import UIKit
 class AppSectionCollectionViewCell: UICollectionViewCell {
 
     
+    @IBOutlet var appIconImageView: UIImageView!
+    @IBOutlet var appTitleLabel: UILabel!
+    @IBOutlet var companyLabel: UILabel!
+    
+    @IBOutlet var getButton: UIButton!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        
+        appIconImageView.layer.cornerRadius = 8
+        getButton.layer.cornerRadius = 16
     }
 
 }
