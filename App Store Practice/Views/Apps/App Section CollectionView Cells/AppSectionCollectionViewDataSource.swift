@@ -10,16 +10,24 @@ import UIKit
 
 class AppSectionCollectionViewDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
+    var appGroup: AppGroup?
+
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return 9
+        return appGroup?.feed.results.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! AppSectionCollectionViewCell
         
+        let app = appGroup?.feed.results[indexPath.item]
+        cell.app = app
+//        cell.appTitleLabel.text = app?.name
+//        cell.companyLabel.text = app?.artistName
+//        cell.appIconImageView.sd_setImage(with: URL(string: app?.artworkUrl100 ?? ""))
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

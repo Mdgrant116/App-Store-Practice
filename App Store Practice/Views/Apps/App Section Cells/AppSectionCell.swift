@@ -16,6 +16,7 @@ class AppSectionCell: UICollectionViewCell {
     
     
     @IBOutlet var collectionView: UICollectionView!
+    @IBOutlet var titleLabel: UILabel!
     
     
     override func awakeFromNib() {

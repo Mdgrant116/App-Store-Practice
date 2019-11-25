@@ -10,7 +10,7 @@ import UIKit
 
 class AppsViewController: UIViewController {
     
-    
+    var  groups = [AppGroup]()
     
     @IBOutlet var collectionView: UICollectionView!
     
@@ -26,24 +26,71 @@ class AppsViewController: UIViewController {
         collectionView.register(UINib(nibName: "AppsHeaderCell", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "Header")
         
         fetchData()
+        
     }
     
     func fetchData() {
+        
+        var group1: AppGroup?
+        var group2: AppGroup?
+        var group3: AppGroup?
+        
+        let dispatchGroup = DispatchGroup()
+        
+        dispatchGroup.enter()
+        
+        Service.shared.fetchTopGrossing { (appGroup, error) in
+            
+            dispatchGroup.leave()
+            group1 = appGroup
+            
+        }
+        
+        dispatchGroup.enter()
+        
+        Service.shared.fetchNewAppsWeLove { (appGroup, error) in
+            
+            dispatchGroup.leave()
+            group2 = appGroup
+            
+        }
+        
+        dispatchGroup.enter()
+        
         Service.shared.fetchGames { (appGroup, error) in
             
-            if let error = error {
+            dispatchGroup.leave()
+            group3 = appGroup
+            
+        }
+        
+        dispatchGroup.notify(queue: .main) {
+            
+            if let group = group1 {
                 
-                print("Filed to fetch games", error)
-                return
+                self.groups.append(group)
+                
+            }
+            if let group = group2 {
+                
+                self.groups.append(group)
+                
+            }
+            if let group = group3 {
+                
+                self.groups.append(group)
+                
             }
             
-            print(appGroup?.feed.results)
+            self.collectionView.reloadData()
             
         }
         
     }
     
 }
+
+
 
 extension AppsViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
@@ -52,17 +99,23 @@ extension AppsViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
         return CGSize(width: view.frame.width, height: 300)
         
     }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return 5
+        return groups.count
         
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! AppSectionCell
         
-        cell.backgroundColor = .green
+        let appGroup = groups[indexPath.item]
+        
+        
+        cell.titleLabel.text = appGroup.feed.title
+        cell.appSectionDataSource.appGroup = appGroup
+        cell.collectionView.reloadData()
         
         return cell
         
