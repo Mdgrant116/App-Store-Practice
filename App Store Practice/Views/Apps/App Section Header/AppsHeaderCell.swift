@@ -11,6 +11,7 @@ import UIKit
 class AppsHeaderCell: UICollectionReusableView {
 
     let appHeaderDataSource = AppsHeaderCollectionViewDataSource()
+    
     @IBOutlet var collectionView: UICollectionView!
     
     
@@ -20,7 +21,9 @@ class AppsHeaderCell: UICollectionReusableView {
         collectionView.dataSource = appHeaderDataSource
         collectionView.delegate = appHeaderDataSource
         collectionView.register(UINib(nibName: "AppsFeaturedHeaderCell", bundle: nil), forCellWithReuseIdentifier: "Cell")
-        // Initialization code
+        
+        
+       
     }
     
 }

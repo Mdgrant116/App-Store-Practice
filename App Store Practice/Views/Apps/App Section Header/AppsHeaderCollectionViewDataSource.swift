@@ -9,6 +9,7 @@
 import UIKit
 
 class AppsHeaderCollectionViewDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 3
         
@@ -19,14 +20,14 @@ class AppsHeaderCollectionViewDataSource: NSObject, UICollectionViewDataSource, 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
         
         return cell
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
         return CGSize(width: collectionView.frame.width - 48, height: collectionView.frame.height)
+        
     }
     
-    
-    
-    
-    
+   
 }

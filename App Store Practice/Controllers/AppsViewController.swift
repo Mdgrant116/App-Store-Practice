@@ -24,6 +24,23 @@ class AppsViewController: UIViewController {
         collectionView.register(UINib(nibName: "AppSectionCell", bundle: nil), forCellWithReuseIdentifier: "Cell")
         
         collectionView.register(UINib(nibName: "AppsHeaderCell", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "Header")
+        
+        fetchData()
+    }
+    
+    func fetchData() {
+        Service.shared.fetchGames { (appGroup, error) in
+            
+            if let error = error {
+                
+                print("Filed to fetch games", error)
+                return
+            }
+            
+            print(appGroup?.feed.results)
+            
+        }
+        
     }
     
 }
